@@ -20,6 +20,7 @@ const CURRENCY_SYMBOLS: Record<string, string> = {
   NZD: 'NZ$',
   MXN: 'MX$',
   BZD: 'BZ$',
+  DOP: 'RD$',
   MYR: 'RM',
   CZK: 'Kč',
   THB: '฿',

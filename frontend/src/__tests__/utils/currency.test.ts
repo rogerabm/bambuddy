@@ -34,6 +34,11 @@ describe('getCurrencySymbol', () => {
     expect(getCurrencySymbol('BZD')).toBe('BZ$');
   });
 
+  it('returns RD$ for DOP', () => {
+    expect(getCurrencySymbol('DOP')).toBe('RD$');
+    expect(getCurrencySymbol('dop')).toBe('RD$');
+  });
+
   it('returns ₱ for PHP', () => {
     expect(getCurrencySymbol('PHP')).toBe('₱');
   });
@@ -69,6 +74,10 @@ describe('SUPPORTED_CURRENCIES', () => {
     expect(SUPPORTED_CURRENCIES.find((c) => c.code === 'BZD')).toBeDefined();
   });
 
+  it('contains DOP with the Dominican peso symbol', () => {
+    expect(SUPPORTED_CURRENCIES.find((c) => c.code === 'DOP')).toEqual({ code: 'DOP', label: 'DOP (RD$)' });
+  });
+
   it('contains IDR', () => {
     expect(SUPPORTED_CURRENCIES.find((c) => c.code === 'IDR')).toBeDefined();
   });
@@ -77,7 +86,7 @@ describe('SUPPORTED_CURRENCIES', () => {
     expect(SUPPORTED_CURRENCIES.find((c) => c.code === 'PHP')).toEqual({ code: 'PHP', label: 'PHP (₱)' });
   });
 
-  it('has 33 entries', () => {
-    expect(SUPPORTED_CURRENCIES).toHaveLength(33);
+  it('has 34 entries', () => {
+    expect(SUPPORTED_CURRENCIES).toHaveLength(34);
   });
 });
